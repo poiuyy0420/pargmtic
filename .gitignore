@@ -70,6 +70,8 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+
+# 추가
 venv/
 
 .env
@@ -77,3 +79,5 @@ venv/
 db.sqlite3
 
 .idea/
+
+__pycache__/
