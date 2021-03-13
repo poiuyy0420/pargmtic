@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'acountapp',
+    'profileapp',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,8 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = reverse_lazy('acountapp:hello_world')
 LOGOUT_REDIRECT_URL = reverse_lazy('acountapp:login')
+
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
