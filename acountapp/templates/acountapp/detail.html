@@ -15,7 +15,11 @@
             <a href="{% url 'acountapp:update' pk=user.pk %}">
                 <p>Chang Info</p>
             </a>
+            <a href="{% url 'acountapp:delete' pk=user.pk %}">
+                <p>Quit</p>
+            </a>
             {% endif %}
         </div>
     </div>
+
 {% endblock %}
