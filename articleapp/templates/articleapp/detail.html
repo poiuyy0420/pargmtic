@@ -18,9 +18,9 @@
 
         </div>
 
-        <p>
-            {{ target_article.content }}
-        </p>
+        <div class="text-left">
+            {{ target_article.content | safe }}
+        </div>
 
         {% if target_article.writer == user %}
         <a href="{% url 'articleapp:update' pk=target_article.pk %}"
