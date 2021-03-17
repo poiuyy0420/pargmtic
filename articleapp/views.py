@@ -55,7 +55,7 @@ class ArticleDeleteView(DeleteView):
     model = Article
     context_object_name = 'target_article'
     success_url = reverse_lazy('articleapp:list')
-    template_name = 'articleapp/delete.html'
+    template_name = 'articleapp/list.html'
 
 
 class ArticleListView(ListView):

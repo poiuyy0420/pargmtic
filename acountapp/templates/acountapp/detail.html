@@ -7,7 +7,7 @@
 
             {% if target_user.profile %}
             <img src="{{ target_user.profile.image.url }}" alt=""
-                 style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem;">
+                 style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem; object-fit: cover;">
 
             <h2 style="font-family: 'NanumSquareRoundOTFR'">
                 {{ target_user.profile.nickname }}
@@ -40,6 +40,12 @@
                 <p>Quit</p>
             </a>
             {% endif %}
+        </div>
+
+        <div>
+
+            {% include 'snippets/list_fragment.html' with article_list=object_list %}
+
         </div>
     </div>
 

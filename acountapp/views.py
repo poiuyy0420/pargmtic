@@ -8,10 +8,12 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView
+from django.views.generic.list import MultipleObjectMixin
 
 from acountapp.decorators import acount_ownership_required
 from acountapp.forms import AcountUpdateForm
 from acountapp.models import HelloWorld
+from articleapp.models import Article
 
 has_ownership = [acount_ownership_required, login_required]
 
@@ -41,10 +43,16 @@ class AcountCreateView(CreateView):
     template_name = 'acountapp/create.html'
 
 
-class AcountDeatilView(DetailView):
+class AcountDeatilView(DetailView, MultipleObjectMixin):
     model = User
     context_object_name = 'target_user'
     template_name = 'acountapp/detail.html'
+    
+    paginate_by = 25
+    
+    def get_context_data(self, **kwargs):
+        object_list = Article.objects.filter(writer=self.get_object()).order_by('-pk')
+        return super(AcountDeatilView, self).get_context_data(object_list=object_list, **kwargs)
 
 
 @method_decorator(has_ownership, 'get')
@@ -63,4 +71,4 @@ class AcountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
     success_url = reverse_lazy('acountapp:login')
-    template_name = 'acountapp/delete.html'
+    template_name = 'acountapp/list.html'
