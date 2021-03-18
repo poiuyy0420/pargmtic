@@ -4,7 +4,7 @@ WORKDIR /home/
 
 RUN echo "testing1234"
 
-RUN git clone https://github.com/noeul1114/pragmatic.git
+RUN git clone https://github.com/poiuyy0420/pargmtic.git
 
 WORKDIR /home/pragmatic/
 
