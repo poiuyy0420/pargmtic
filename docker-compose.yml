@@ -15,8 +15,8 @@ services:
     networks:
       - network
     volumes:
-      - static-volume:/home/pragmatic/staticfiles
-      - media-volume:/home/pragmatic/media
+      - static-volume:/home/pargmtic/staticfiles
+      - media-volume:/home/pargmtic/media
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY
