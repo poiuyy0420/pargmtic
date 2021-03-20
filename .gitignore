@@ -84,3 +84,6 @@ __pycache__/
 /db_backup.sqlite3
 
 media/
+
+aws_blog_key.pem
+blog_key.ppk
